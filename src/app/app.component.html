@@ -1,3 +1,10 @@
 <h1>
   {{title}}
 </h1>
+
+<app-tangerine-form [config]="config" (formDone)="onFormDone($event)"></app-tangerine-form>
+
+<div *ngIf="result">
+  <h2>Result</h2>
+  <textarea rows=10 cols=80>{{result | json}}</textarea>
+</div>

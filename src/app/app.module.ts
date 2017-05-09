@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { TangerineFormModule } from './tangerine-form/tangerine-form.module';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,7 +14,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    TangerineFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]
