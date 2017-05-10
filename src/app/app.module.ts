@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { TangerineFormModule } from './tangerine-form/tangerine-form.module';
+import { NgBinderModule } from './ng-binder/ng-binder.module';
 
 import { AppComponent } from './app.component';
 
@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    TangerineFormModule
+    NgBinderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
