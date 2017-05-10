@@ -13,17 +13,21 @@ import { QuestionControlService } from '../question-control.service';
   providers: [ QuestionControlService ]
 })
 export class NgJsonFormComponent implements OnInit {
-
-  @Input() config: Array<any> = [];
+  private _config: Array<any> = [];
   @Output() jsonFormSubmit: EventEmitter<Object> = new EventEmitter();
   questions: QuestionBase<any>[] = [];
   form: FormGroup;
 
   constructor(private qcs: QuestionControlService) {  }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  @Input()
+  set config(config: Array<any>) {
+    this._config = config;
     // Populate this.questions from this.config with appropriately casted Question Classes.
-    this.config.forEach(element => {
+    this.questions = [];
+    this._config.forEach(element => {
       switch (element.questionClass) {
         case 'DropdownQuestion':
           this.questions.push(new DropdownQuestion(element));
@@ -36,7 +40,10 @@ export class NgJsonFormComponent implements OnInit {
     this.form = this.qcs.toFormGroup(this.questions);
   }
 
+  get config(): Array<any> { return this._config; }
+
   onSubmit() {
     this.jsonFormSubmit.emit(this.form.value);
   }
+
 }
