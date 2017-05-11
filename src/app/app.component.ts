@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Binder Demo';
+  title = 'Tangerine Form Demo';
   binderConfig: object;
   result: object;
   constructor() {
@@ -21,6 +21,7 @@ export class AppComponent {
       spreadsheetSchemaId: "dd74f132-3101-11e7-93ae-92361f002671",
       children: [
         {
+          _id: "a",
           collection: "section",
           title: "Section 1",
           stopwatch: true,
@@ -35,6 +36,7 @@ export class AppComponent {
           forkable: true,
           children: [
             {
+              _id: "1",
               title: "Page 1",
               collection: "Page",
               columnNames: [ "Column Name 1", "Column Name 2" ],
@@ -62,6 +64,7 @@ export class AppComponent {
               ]
             },
             {
+              _id: "2",
               title: "Page 2",
               collection: "Page",
               columnNames: [ "Column Name 1", "Column Name 2" ],
@@ -91,6 +94,7 @@ export class AppComponent {
           ]
         },
         {
+          _id: "b",
           collection: "section",
           title: "Section 2",
           stopwatch: true,
@@ -105,6 +109,7 @@ export class AppComponent {
           forkable: true,
           children: [
             {
+              _id: "3",
               title: "Page 1",
               collection: "Page",
               columnNames: [ "Column Name 1", "Column Name 2" ],
@@ -132,6 +137,7 @@ export class AppComponent {
               ]
             },
             {
+              _id: "4",
               title: "Page 2",
               collection: "Page",
               columnNames: [ "Column Name 1", "Column Name 2" ],
@@ -162,8 +168,8 @@ export class AppComponent {
         }
       ]
     };
-
   }
+
 
   onBinderDone(data) {
     this.result = data;
