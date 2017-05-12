@@ -1,2 +1,2 @@
-<h2>Binder</h2>
-<app-ng-json-form [config]="currentPage" (jsonFormSubmit)="onJsonFormSubmit($event)"></app-ng-json-form>
+<h2>Section: {{currentSection.title}}</h2>
+<app-ng-json-form [config]="currentPage.config" (jsonFormSubmit)="onJsonFormSubmit($event)"></app-ng-json-form>
